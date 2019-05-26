@@ -1,0 +1,14 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "../src/App.svelte",
+    "../src/routes/About.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\n  import { Router, Route } from 'svelte-routing';\n\n  import NavLink from './components/NavLink.svelte';\n  import Home from './routes/Home.svelte';\n  import About from './routes/About.svelte';\n  import Blog from './routes/Blog.svelte';\n\n  // Used for SSR. A falsy value is ignored by the Router.\n  export let url = '';\n</script>\n\n<style lang=\"scss\">div {\n  background: blue; }\n  div nav {\n    background: green; }\n\n/*# sourceMappingURL=App.svelte.css.map */</style>\n\n<div>\n  <Router {url}>\n    <nav>\n      <NavLink to=\"/\">Home</NavLink>\n      <NavLink to=\"about\">About</NavLink>\n      <NavLink to=\"blog\">Blog</NavLink>\n    </nav>\n    <div>\n      <Route path=\"about\" component={About} />\n      <Route path=\"blog\" component={Blog} />\n      <Route path=\"/\" component={Home} />\n    </div>\n  </Router>\n</div>\n",
+    "<style lang=\"scss\">h1 {\n  color: blue; }\n\n/* your styles go here */\n\n/*# sourceMappingURL=About.svelte.css.map */</style>\n\n<h1>About</h1>\n<p>I like to code</p>\n"
+  ],
+  "names": [],
+  "mappings": "AAYmB,GAAG,cAAC,CAAC,AACtB,UAAU,CAAE,IAAI,AAAE,CAAC,AACnB,iBAAG,CAAC,GAAG,cAAC,CAAC,AACP,UAAU,CAAE,KAAK,AAAE,CAAC;ACfL,EAAE,eAAC,CAAC,AACrB,KAAK,CAAE,IAAI,AAAE,CAAC"
+}
