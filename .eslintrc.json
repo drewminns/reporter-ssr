@@ -13,9 +13,6 @@
     "node": true,
     "jest": true
   },
-  "settings": {
-    "svelte3/ignore-styles": true
-  },
   "rules": {
     "cypress/globals": true,
     "no-debugger": 0,
