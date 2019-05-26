@@ -1,4 +1,5 @@
 node_modules
 .prettierrc.json
-public
+public/
 package*.json
+rollup.config.js

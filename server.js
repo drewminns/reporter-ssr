@@ -8,7 +8,7 @@ const { PORT } = require('./config/environment');
 const app = require('./public/App.js');
 const routes = require('./api');
 
-const log = console.log;
+const { log } = console;
 
 const server = express();
 
@@ -31,6 +31,4 @@ server.get('*', (req, res) => {
   res.end();
 });
 
-server.listen(PORT, () =>
-  log(chalk.bgGreen.black(` Running on port ${PORT} `)),
-);
+server.listen(PORT, () => log(chalk.bgGreen.black(` Running on port ${PORT} `)),);

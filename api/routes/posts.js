@@ -1,5 +1,5 @@
 const posts = require('../controllers/posts');
 
-module.exports = router => {
+module.exports = (router) => {
   router.get('/posts', posts.getAll);
 };

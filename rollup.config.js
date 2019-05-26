@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 import svelte from 'rollup-plugin-svelte';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
@@ -6,7 +7,6 @@ import globals from 'rollup-plugin-node-globals';
 import notify from 'rollup-plugin-notify';
 import sizes from 'rollup-plugin-sizes';
 import autoPreprocess from 'svelte-preprocess';
-// import postcss from 'postcss';
 import postcss from 'rollup-plugin-postcss';
 import { terser } from 'rollup-plugin-terser';
 
@@ -40,7 +40,7 @@ export default [
         // we'll extract any component CSS out into
         // a separate file — better for performance
         preprocess: sveltePreprocess,
-        css: css => {
+        css: (css) => {
           css.write('public/bundle.css');
         },
       }),
@@ -57,8 +57,8 @@ export default [
       notify(),
       // App.js will be built after bundle.js, so we only need to watch that.
       // By setting a small delay the Node server has a chance to restart before reloading.
-      isDev &&
-        livereload({
+      isDev
+        && livereload({
           watch: 'public/App.js',
           delay: 200,
         }),
